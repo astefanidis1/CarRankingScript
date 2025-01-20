@@ -1,19 +1,24 @@
 # Project Notes
 
-## Timeline
-- **Jan 2025**: Added Glicko ranking system for pairwise car matchups.
+## Development Timeline
+- **Jan 2025**: Added Glicko ranking system for pairwise matchups.
 - **Jan 19, 2025**: Implemented tier meshing and debugging tools.
+- **Jan 20, 2025**: Finalized dynamic RD adjustments and matchup logic.
 
-## Goals
-1. Create a perfectly ranked list of all cars based on personal preference.
-2. Ensure the ranking system accounts for tier meshing without distortion.
-3. Add car details (images, specs) for future visualization.
+## Challenges and Solutions
+### Data Persistence Issues
+**Challenge**: Matchup results weren't being saved properly.
+**Solution**:
+- Debugging with print statements.
+- Refining the `save_cars` function to ensure row-specific updates.
 
-## Challenges & Solutions
-- **Challenge**: Overfitting Elo scores within tiers.
-  **Solution**: Cross-tier matchups and debugging tools to ensure fairness.
+### Elo Inflation in Early Matchups
+**Challenge**: Early matchups caused extreme Elo score inflation.
+**Solution**:
+- Transitioned to Glicko with custom RD adjustments.
+- Tuned parameters for balanced rating adjustments.
 
-## Ideas
-- Add a web interface for easier use and better visualization.
-- Include statistical insights (e.g., ranking stability, matchup history).
-- Allow others to create their own ranking datasets.
+## Ideas and Future Goals
+- Add car images, audio clips, and performance data for matchups.
+- Develop a web-based interface for better usability.
+- Incorporate public voting for additional feedback.
